@@ -56,3 +56,4 @@ __generated__/
 
 # Bundle artifact
 *.jsbundle
+bundle.web.js

@@ -10,19 +10,30 @@
   "dependencies": {
     "hoist-non-react-statics": "^3.0.1",
     "react": "16.6.0-alpha.8af6728",
+    "react-art": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-native": "0.57.3",
+    "react-native-web": "^0.11.4",
     "react-navigation": "2.18.0",
     "react-relay": "1.6.2",
+    "react-scripts": "3.0.1",
+    "relay": "^0.8.0-1",
+    "relay-runtime": "^4.0.0",
     "styled-components": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-export-default-from": "7.0.0",
     "@babel/plugin-proposal-export-namespace-from": "7.0.0",
+    "@svgr/webpack": "^4.3.0",
+    "babel-loader": "^8.0.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "23.6.0",
     "babel-plugin-relay": "1.6.2",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
+    "babel-plugin-react-native-web": "^0.11.4",
+    "copy-webpack-plugin": "^5.0.3",
     "eslint": "^5.7.0",
     "eslint-plugin-flowtype": "^3.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -30,6 +41,7 @@
     "eslint-plugin-react-native": "^3.5.0",
     "graphql": "^14.0.2",
     "graphql-query-test-mock": "^0.9.0",
+    "html-webpack-plugin": "^3.2.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "23.6.0",
     "lint-staged": "^7.3.0",
@@ -37,10 +49,16 @@
     "nock": "^10.0.1",
     "prettier": "^1.14.3",
     "react-devtools": "^3.4.2",
+    "react-native-svg-transformer": "^0.13.0",
     "react-native-testing-library": "^1.3.0",
     "react-test-renderer": "16.5.2",
     "relay-compiler": "1.6.2",
-    "relay-devtools": "^1.4.0"
+    "relay-devtools": "^1.4.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.7.1",
+    "yarn": "^1.15.2"
   },
   "jest": {
     "preset": "react-native"
@@ -67,6 +85,9 @@
     "relay": "relay-compiler --src ./src --schema data/schema.graphql",
     "relay:watch": "yarn relay -- --watch",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "serve": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server -d --config ./web/webpack.dev.config.js --inline --hot --colors",
+    "bundle": "./node_modules/.bin/webpack -p --config ./web/webpack.config.js",
+    "devBundle": "NODE_ENV=development ./node_modules/.bin/webpack --mode development -d --config ./web/webpack.config.js"
   }
 }
