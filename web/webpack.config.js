@@ -45,7 +45,7 @@ const libraryConfig = {
   include: [
     /node_modules\/react-native-/,
     /node_modules\/react-navigation-/,
-    /node_modules\/@react-navigation/,
+    /node_modules\/react-navigation/,
     /node_modules\/react-native-vector-icons\/Fonts/,
   ],
   use: {
